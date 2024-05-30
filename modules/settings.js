@@ -1,4 +1,2 @@
-export const apikey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFhc3FjYnh5d3hpempmdHV4cmFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NTE2ODQsImV4cCI6MjAyNjMyNzY4NH0.zFiJ3ZuEZ7qDGqLSHim92KJsArEuNj9N3JNlbtUjvGU";
-export const endpoint =
-  "https://aasqcbxywxizjftuxrao.supabase.co/rest/v1/recipes";
+export const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5xenFpdnVreXZ1c3lxeWRqa2htIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NTE2NjUsImV4cCI6MjAyNjMyNzY2NX0.UUJvo-1OSO7KAM0yHfVJoBL6EyiWAayYJqfyE0ccqN4";
+export const endpoint = "https://nqzqivukyvusyqydjkhm.supabase.co";
