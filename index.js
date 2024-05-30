@@ -18,9 +18,15 @@ async function showRecipes() {
     const parent = document.querySelector(".recipes");
     parent.innerHTML = "";
 
-    response.forEach((rec) => {
-      const clone = template.cloneNode(true);
-      console.log("Recipe:", rec); // Debugging statement
+   // Inside the showRecipes function
+response.forEach((rec) => {
+  const clone = el.cloneNode(true);
+  clone.querySelector("[data-name]").textContent = rec.name;
+  clone.querySelector("[data-origin]").textContent = rec.origin;
+  clone.querySelector("[data-description]").textContent = rec.description; // Add this line for description
+
+  // Rest of your code...
+
 
       // Display title (name)
       const titleElement = clone.querySelector("[data-name]");
