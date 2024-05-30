@@ -38,6 +38,8 @@ async function showRecipes() {
         console.warn("Origin element not found");
       }
 
+     
+
       // Display diet
       const dietElement = clone.querySelector("[data-diet]");
       if (dietElement) {
