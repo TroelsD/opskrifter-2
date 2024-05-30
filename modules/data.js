@@ -13,20 +13,13 @@ export async function getRecipes() {
   let data = await response.json();
   return data;
 }
-//WET - Write Everything Twice
-//DRY - Don't Repeat Yourself
-//AHA - Avoid Hasty Abstractions
 
-export async function createRecipe(formData) {
-  const recipe = {
-    name: formData.get('name'),
-    description: formData.get('description'),
-    diet: formData.get('diet'),
-    origin: formData.get('origin'),
-    serves: formData.get('serves'),
-    studentFriendly: formData.get('studentFriendly') === 'yes',
-    ingredients: formData.get('ingredients').split('\n'),
-    allergens: formData.get('allergens').split('\n'),
+export async function createRecipe(recipe) {
+  let headersList = {
+    Accept: "application/json",
+    apikey: apikey,
+    Prefer: "return=representation",
+    "Content-Type": "application/json",
   };
 
   let bodyContent = JSON.stringify(recipe);
