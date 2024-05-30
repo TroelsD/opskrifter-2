@@ -1,0 +1,4 @@
+export const apikey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFhc3FjYnh5d3hpempmdHV4cmFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NTE2ODQsImV4cCI6MjAyNjMyNzY4NH0.zFiJ3ZuEZ7qDGqLSHim92KJsArEuNj9N3JNlbtUjvGU";
+export const endpoint =
+  "https://aasqcbxywxizjftuxrao.supabase.co/rest/v1/recipes";

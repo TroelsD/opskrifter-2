@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="content">
+        <h1>Opskrifter</h1>
+        <p>Tilføj dine egne opskrifter her!</p>
+      </div>
+    </header>
+
+    <main id="main">
+      <form>
+        <div class="form-group">
+          <label for="name">Hvad skal vi kalde din opskrift?</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            autocomplete="off"
+            placeholder="Indtast titel her"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">
+            Hvordan vil du beskrive din opskrift?
+            <span class="hint"></span>
+          </label>
+          <textarea
+            name="description"
+            id="description"
+            required
+            placeholder="Indtast beskrivelse her"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="diet"
+            >Diæt
+            <span class="hint"></span>
+          </label>
+          <select id="diet" name="diet" required>
+            <option>Vegansk</option>
+            <option>Vegetarisk</option>
+            <option>Indeholder kød</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="origin"> Oprindelse </label>
+          <input type="text" id="origin" name="origin" list="countrylist" />
+          <datalist id="countrylist">
+            <option value="Denmark"></option>
+            <option value="Sweden"></option>
+            <option value="Norway"></option>
+          </datalist>
+        </div>
+
+        <div class="form-group range">
+          <label for="serves">Antal serveringer</label>
+          <div class="range-wrap" data-level-min="1" data-level-max="5">
+            <input
+              type="range"
+              step="1"
+              min="1"
+              max="5"
+              value="3"
+              list="al"
+              id="serves"
+              name="serves"
+            />
+            <datalist id="al">
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+              <option value="4"></option>
+              <option value="5"></option>
+            </datalist>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ingredients"> Ingredienser </label>
+          <textarea
+            name="ingredients"
+            id="ingredients"
+            placeholder="Indtast en ingrediens per linje"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="allergens"> Allergener </label>
+          <textarea
+            name="allergens"
+            id="allergens"
+            placeholder="Indtast en allergene per linje"
+          ></textarea>
+        </div>
+
+        <div role="group" aria-labelledby="is-alive" class="is-alive">
+          <h2 id="is-alive" class="legend">Er det budgetvenligt?</h2>
+          <div class="controls">
+            <label class="radio-label" for="yes">
+              <input id="yes" type="radio" name="studentFriendly" value="yes" />
+              Ja
+            </label>
+            <label class="radio-label" for="no">
+              <input
+                id="no"
+                type="radio"
+                name="studentFriendly"
+                value="no"
+                checked
+              />
+              Nej
+            </label>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <button data-add class="btn">Tilføj opskrift</button>
+        </div>
+      </form>
+      <section class="recipes"></section>
+    </main>
+    <template>
+      <article class="card">
+        <header>
+          <div class="header-content">
+            <h2>
+              <span data-name>Brændende kærlighed</span>,
+              <span data-origin>Denmark</span>
+            </h2>
+
+            <div>
+              <dl>
+                <div>
+                  <dt class="visually-hidden">Oprindelsesland</dt>
+                  <dd data-origin>Denmark</dd>
+                </div>
+              </dl>
+              <dl>
+                <div>
+                  <dt class="visually-hidden">Diæt</dt>
+                  <dd data-diet>Vegetarian</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <p class="status">
+            <span data-studentFriendly>Budgetvenligt?</span>
+          </p>
+          <img
+            data-img
+            src="https://source.unsplash.com/random/600x300?random"
+            alt="billede til opskrift"
+          />
+        </header>
+        <dl class="ingredient-list" data-ingredients>
+          <dt class="visually-hidden">Ingredienser</dt>
+        </dl>
+        <section>
+          <h3>Serverer</h3>
+          <meter data-serves min="0" max="5" low="0" high="5" value="3"></meter>
+        </section>
+        <div class="actions">
+          <button data-id="15" data-action="delete">Slet</button>
+          <button data-id="15" data-action="update">Opdater</button>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
