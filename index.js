@@ -49,10 +49,16 @@ async function showRecipes() {
       // Display student-friendly status
       const studentFriendlyElement = clone.querySelector("[data-studentFriendly]");
       if (studentFriendlyElement) {
-        studentFriendlyElement.textContent = rec.studentFriendly ? "Ja" : "Nej";
+        studentFriendlyElement.textContent = rec.studentFriendly ? "Ja den er studentervenlig!" : "Nej den er desværre ikke studentervenlig!";
       } else {
         console.warn("Student friendly element not found");
       }
+      // Add studentFriendly status to the clone
+const statusElement = clone.querySelector(".status");
+statusElement.innerHTML = ""; // Clear previous content
+const studentFriendlyStatus = rec.studentFriendly ? "Ja" : "Nej";
+statusElement.innerHTML = `<h4>Studentervenlig?</h4><span>${studentFriendlyStatus}</span>`;
+
 
       // Display ingredients
       const ingredientsList = clone.querySelector("[data-ingredients]");
@@ -62,6 +68,29 @@ async function showRecipes() {
           const li = document.createElement("li");
           li.textContent = ingredient;
           ingredientsList.appendChild(li);
+          // Add ingredients to the clone
+const ingredientList = clone.querySelector("[data-ingredients]");
+ingredientList.innerHTML = ""; // Clear previous content
+const ingredients = rec.ingredients.map((ingredient) => `<li>${ingredient}</li>`).join("");
+ingredientList.innerHTML = `<h4>Ingredienser:</h4><ul>${ingredients}</ul>`;
+
+        });
+      }
+
+      const allergensList = clone.querySelector("[data-allergens]");
+      allergensList.innerHTML = ""; // Clear previous allergens
+      if (Array.isArray(rec.allergens)) {
+        rec.allergens.forEach((allergen) => {
+          const li = document.createElement("li");
+          li.textContent = allergen;
+          allergensList.appendChild(li);
+
+          // Add allergens to the clone
+const allergenList = clone.querySelector("[data-allergens]");
+allergenList.innerHTML = ""; // Clear previous content
+const allergens = rec.allergens.map((allergen) => `<li>${allergen}</li>`).join("");
+allergenList.innerHTML = `<h4>Allergener:</h4><ul>${allergens}</ul>`;
+
         });
       }
 
