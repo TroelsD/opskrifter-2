@@ -104,10 +104,15 @@
         </div>
 
         <div role="group" aria-labelledby="is-alive" class="is-alive">
-          <h2 id="is-alive" class="legend">Er det budgetvenligt?</h2>
+          <h2 id="is-alive" class="legend">Studentervenligt?</h2>
           <div class="controls">
             <label class="radio-label" for="yes">
-              <input id="yes" type="radio" name="studentFriendly" value="yes" />
+              <input
+                id="yes"
+                type="radio"
+                name="studentFriendly"
+                value="Ja den er studentervenlig!"
+              />
               Ja
             </label>
             <label class="radio-label" for="no">
@@ -115,7 +120,7 @@
                 id="no"
                 type="radio"
                 name="studentFriendly"
-                value="no"
+                value="Nej den er desværre ikke studentervenlig!"
                 checked
               />
               Nej
@@ -137,7 +142,7 @@
           <div class="header-content">
             <h2>
               <span data-name></span>,
-              <span data-origin></span>
+              <!-- <span data-origin></span> -->
             </h2>
             <div>
               <dl>
@@ -160,6 +165,11 @@
         </header>
         <dl class="ingredient-list" data-ingredients>
           <dt class="visually-hidden">Ingredienser:</dt>
+          Ingredienser
+        </dl>
+        <dl class="allergen-list" data-allergens>
+          <dt class="visually-hidden">Allergener:</dt>
+          <h4>Allergener:</h4>
         </dl>
         <section>
           <h3>Serverer:</h3>
