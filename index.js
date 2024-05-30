@@ -30,6 +30,9 @@ async function showRecipes() {
         console.warn("Title element not found");
       }
 
+      clone.querySelector("[data-description]").textContent = rec.description;
+
+
       // Display origin
       const originElement = clone.querySelector("[data-origin]");
       if (originElement) {
