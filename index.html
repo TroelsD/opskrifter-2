@@ -128,8 +128,10 @@
           <button data-add class="btn">Tilføj opskrift</button>
         </div>
       </form>
+
       <section class="recipes"></section>
     </main>
+
     <template>
       <article class="card">
         <header>
@@ -157,11 +159,6 @@
           <p class="status">
             <span data-studentFriendly>Budgetvenligt:</span>
           </p>
-          <img
-            data-img
-            src="https://source.unsplash.com/random/600x300?random"
-            alt="billede til opskrift"
-          />
         </header>
         <dl class="ingredient-list" data-ingredients>
           <dt class="visually-hidden">Ingredienser:</dt>
@@ -170,6 +167,11 @@
           <h3>Serverer:</h3>
           <meter data-serves min="0" max="5" low="0" high="5" value="3"></meter>
         </section>
+        <img
+          data-img
+          src="https://source.unsplash.com/random/600x300?random"
+          alt="billede til opskrift"
+        />
         <div class="actions">
           <button data-id="15" data-action="delete">Slet</button>
           <button data-id="15" data-action="update">Opdater</button>
